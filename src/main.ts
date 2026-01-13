@@ -1,3 +1,4 @@
+// Importar fetch polyfill antes que cualquier otra cosa
 import 'isomorphic-fetch';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-return */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Client } from '@microsoft/microsoft-graph-client';
@@ -112,7 +115,6 @@ export class GraphService {
         `📤 Enviando mensaje a Teams (Team: ${teamId.substring(0, 8)}..., Channel: ${channelId.substring(0, 8)}...)`,
       );
       // Petición a la API de Graph
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
       const result = await this.graphClient
         .api(`/teams/${teamId}/channels/${channelId}/messages`)
         .post(chatMessage);

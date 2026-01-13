@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import {
   Controller,
   Get,
@@ -43,7 +46,7 @@ export class WhatsappController {
     const message = value?.messages?.[0];
 
     if (message && message.type === 'text') {
-      const from = message.from;      // El número de WhatsApp del cliente
+      const from = message.from; // El número de WhatsApp del cliente
       const text = message.text.body; // Lo que escribió (ej: "Hola")
       const name = value.contacts?.[0]?.profile?.name || 'Usuario'; // Su nombre de perfil
 
